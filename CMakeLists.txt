@@ -14,7 +14,7 @@ project(nanothread
 #  Optional features available to users
 # ----------------------------------------------------------
 
-option(NANOTHREAD_STATIC "Build as static library?" OFF)
+option(NANOTHREAD_STATIC "Build as static library?" ON)
 option(NANOTHREAD_ENABLE_TESTS "Build test suite?" OFF)
 
 # ----------------------------------------------------------

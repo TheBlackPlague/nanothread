@@ -12,6 +12,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <type_traits>
 
 #if !defined(__cplusplus)
     #include <stdbool.h>

@@ -53,9 +53,11 @@ target_sources(nanothread PRIVATE
 target_compile_features(nanothread PRIVATE cxx_std_11)
 target_include_directories(nanothread PRIVATE include)
 
-if (CMAKE_SYSTEM_PROCESSOR MATCHES "amd64.*|x86_64.*|AMD64.*")
-  if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
-    target_compile_options(nanothread PRIVATE -mcx16)
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Windows")
+  if (CMAKE_SYSTEM_PROCESSOR MATCHES "amd64.*|x86_64.*|AMD64.*")
+    if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
+      target_compile_options(nanothread PRIVATE -mcx16)
+    endif()
   endif()
 endif()
 
